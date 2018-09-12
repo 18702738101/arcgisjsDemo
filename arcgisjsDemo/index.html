@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>ArcGIS JavaScript示例</title>
+    <link rel="stylesheet" href="http://192.168.56.102:8081/arcgis_js_v48_api/arcgis_js_api/library/4.8/dijit/themes/claro/claro.css">
+    <!-- <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css"> -->
+    <link rel="stylesheet" href="http://192.168.56.102:8081/arcgis_js_v48_api/arcgis_js_api/library/4.8/esri/css/main.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <!-- <script src="https://js.arcgis.com/3.21/"></script> -->
+    <!-- <script>
+        var dojoConfig = {
+          has: {
+            // Enable webgl for feature layer in MapView
+            "esri-featurelayer-webgl": 1
+          }
+        };
+    </script> -->
+    <script src="http://192.168.56.102:8081/arcgis_js_v48_api/arcgis_js_api/library/4.8/init.js"></script>
+    <script src="./libs/jquery-1.11.2.min.js"></script>
+    <script src="./libs/mainFun.js"></script>
+</head>
+
+<body>
+    <div id="mapCon">
+
+        <div class="toolbar">
+            <img title="单击查询" src="./images/pointquery.png">
+            <img title="拉框查询" src="./images/rectquery.png">
+            <img title="添加要素" src="./images/addfeature.png">
+            <img title="初始化" src="./images/reset.png">
+        </div>
+    </div>
+    <div class='layercotain'></div>
+    <div class='symbolpanel'></div>
+    <div id="showbtn">
+        <img title="初始化" src="./images/showhide.png">
+    </div>
+    <div id="divShowResult"></div>
+</body>
+
+</html>

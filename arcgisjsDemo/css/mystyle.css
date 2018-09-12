@@ -1,0 +1,505 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body, {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#mapCon {
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.toolbar {
+    width: 210px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background-color: rgba(110, 110, 110, 0.5);
+    border-style: none;
+    border-radius: 5px;
+}
+
+/* .toolbar {
+   
+} */
+
+.toolbar img {
+    height: 32px;
+    width: 32px;
+    margin: 8px 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.toolbar img:hover {
+    border-radius: 5px;
+    background-color: rgba(110, 110, 110, 0.9)
+}
+
+#divShowResult {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border-top: 5px solid rgba(59, 112, 211, 0.452);
+}
+
+#tabletoolbar input[type='button'] {
+    padding: 3px;
+    border-style: none;
+    border-radius: 2px;
+    background-color: rgba(33, 150, 243, 0.8);
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    position: absolute;
+    /* line-height: 20px; */
+    left: 0px;
+    top: 3px;
+    display: none;
+}
+
+#tabletoolbar {
+    height: 25px;
+    background-color: rgba(56, 54, 54, 0.5);
+    text-align: center;
+    line-height: 25px;
+    color: rgb(17, 19, 31);
+    font-family: "宋体";
+}
+
+#divShowResult table th, td {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+#divShowResult table th {
+    padding: 10px;
+    color: rgba(110, 110, 110, 0.8);
+    font-size: 12px;
+}
+
+#divShowResult table td span {
+    display: block;
+    color: rgba(14, 13, 13, 0.8);
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    width: 100%;
+    padding: 5px;
+}
+
+#divShowResult table td {
+    color: rgba(14, 13, 13, 0.8);
+    font-size: 12px;
+    height: 25px;
+    /* padding:5px; */
+}
+
+#divShowResult table td input{
+    display: none;
+    color: rgba(14, 13, 13, 0.8);
+    font-size: 12px;
+    height: 25px;
+    padding: 5px;
+    border-style: none;
+}
+
+#divShowResult table td select{
+    display: none;
+    color: rgba(14, 13, 13, 0.8);
+    font-size: 12px;
+    height: 25px;
+    padding: 5px;
+    border-style: none;
+} 
+
+#divShowResult table {
+    border-collapse: collapse;
+    /* height: 100%; */
+    width: 100%;
+}
+
+#resulttable {
+    height: 86%;
+    overflow: auto;
+}
+
+/*滚动条样式*/
+
+#resulttable::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 8px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 12px;
+}
+.layercotain>div:nth-child(2)::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 8px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 12px;
+}
+.symbolpanel>div:last-child::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 8px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 12px;
+}
+#resulttable::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+.layercotain>div:nth-child(2)::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+.symbolpanel>div:last-child::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#resulttabl::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+.layercotain>div:nth-child(2)::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+.symbolpanel>div:last-child::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+#showbtn {
+    border-top: 2px solid rgb(32, 137, 223);
+    border-left: 2px solid rgb(32, 137, 223);
+    border-right: 2px solid rgb(32, 137, 223);
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    border-radius: 5px;
+    background-color: #1175d383;
+    cursor: pointer;
+}
+
+#showbtn img {
+    color: rgb(255, 255, 255);
+    width: 32px;
+    height: 32px;
+    padding: 1px;
+}
+
+.select {
+    background-color: rgba(10, 134, 236, 0.5);
+}
+
+.symbolselect {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    background-color: rgb(255, 255, 255)
+}
+
+.popup_menu {
+    position: absolute;
+    z-index: 9999;
+    border: 1px solid #AEAEAE;
+    padding: 2px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.popup_menu a {
+    display: block;
+    color: #325B8E;
+    text-indent: 12px;
+    text-decoration: none;
+    height: 26px;
+    line-height: 25px;
+    padding-right: 5px;
+}
+
+.popup_menu a:hover {
+    background: #57B4E4;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.esri-popup__main-container {
+    max-width: 300px;
+}
+
+.esri-view-height-less-than-medium .esri-popup__main-container {
+    max-height: 330px;
+}
+
+.wrap {
+    width: 250px;
+}
+
+.symbolpanel{
+    height: 30px;
+    width:250px;
+    position: absolute;
+    right:2px;
+    top:250px;
+    padding:0px;
+    display:none;
+}
+.symbolpanel>div:first-child{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgb(128,128,128);
+    background-color: rgba(0,0,0,0.2);
+
+}
+.symbolpanel>div:first-child a:first-child{
+    color:rgb(255,255,255);
+    position: absolute;
+    left: 5px;
+    text-decoration: none;
+}
+.symbolpanel>div:first-child a:last-child{
+    color:rgb(255,255,255);
+    position: absolute;
+    right: 5px;
+    text-decoration: none;
+}
+.symbolpanel>div:last-child{
+    height: 270px;
+    margin: 0px;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.8);
+    border: 1px solid rgba(128,128,128,0.8);
+}
+.symbolpanel table  tr td:hover{
+   background-color: rgba(128, 128, 128,0.5);
+   border-radius: 2px;
+}
+
+.symbolpanel table  tr td a{
+    text-decoration: none;
+   
+}
+.symbolpanel table  tr td div{
+   padding:2px;
+   width:72px;
+   text-align: center;
+   border-bottom: 1px solid rgb(128,128,128);
+}
+.symbolpanel table  tr td a span{
+    font-size: 10px;
+    text-align: center;
+    display: block;
+    line-height: 12px;
+    color:rgb(255,255,255);
+    height: 12px;
+}
+/*清浮动---clearfix*/
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+}
+
+.blist {
+    border: 1px solid #d9d9d9;
+    width: 100%;
+}
+
+.blist li:first-child {
+    border-left: none;
+}
+
+.blist li {
+    list-style: none;
+    width: 68px;
+    height: 32px;
+    border-left: 1px solid #d9d9d9;
+    font-size: 14px;
+    font-family: "楷体";
+    line-height: 32px;
+    text-align: center;
+    float: left;
+    /*鼠标样式改变为一个手*/
+    cursor: pointer;
+    /*字体免选中*/
+    -webkit-user-select: none;
+}
+
+.blsit-list {
+    width: 250px;
+}
+
+.blsit-list li {
+    list-style: none;
+    width: 250px;
+    border: 1px solid #ccc;
+    /* height: 400px; */
+    margin-top: -1px;
+}
+
+.wrap .blist li.active {
+    font-weight: bold;
+    color: red;
+    color: rgb(199, 6, 6);
+    border-top: 2px solid red;
+    position: relative;
+    top: -1px;
+    height: 30px;
+    width: 100%;
+}
+
+.blsit-list li:first-child {
+    display: block;
+}
+
+.blsit-list li {
+    display: none;
+}
+
+.wrap .blsit-list li .atttable {
+    border-collapse: collapse;
+    width: 100%;
+    border-style: none;
+}
+
+.wrap .blsit-list li .symboltable {
+    border-collapse: collapse;
+    width: 100%;
+    border-style: none;
+    text-align: center;
+}
+
+.wrap .blsit-list li .symboltable td div {
+    border-style: none;
+    border-width: 1px;
+    border-color: rgba(199, 6, 6, 0.8);
+}
+
+.wrap .blsit-list li .symboltable td div:hover {
+    border-style: solid;
+    cursor: pointer;
+}
+
+.wrap .blsit-list li .atttable tr td:first-child {
+    word-break: keep-all;
+    white-space: nowrap;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.wrap .blsit-list li .atttable td:last-child {
+    width: 25px;
+}
+
+.wrap .blsit-list li .atttable td input, select {
+    border-style: none;
+    padding: 5px;
+    width: 160px;
+    display: inline-block;
+}
+.menuactive {
+    background-color: #0079c1;
+    color: #e4e4e4;
+    border-radius: 5px;
+}
+.layercotain {
+    width: 210px;
+    height: 160px;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: rgba(250, 255, 250, 0.5);
+    font-style: "宋体";
+    font-family: "宋体";
+    border-radius: 5px;
+    border-top: 5px solid rgb(255, 0, 0);
+    border: 6px 1px solid;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    border-left: 1px solid rgb(128, 128, 128);
+    border-right: 1px solid rgb(128, 128, 128);
+    display:none;
+}
+
+.layercotain>div:first-child {
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(51, 146, 241);
+}
+
+.layercotain>div:nth-child(2) {
+    overflow: auto;
+    height: 110px;
+    background: rgb(255,255,255)
+}
+
+.layercotain>div a {
+    position: absolute;
+    right:2px;
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+
+.layercotain>div:last-child {
+    height: 21px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.layercotain ul {
+    list-style-type: none;
+    padding-left: 30px;
+    margin: 2px;
+}
+
+.layercotain ul li {
+    font-size: 16px;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.layercotain ul li span {
+    padding: 10px;
+}
